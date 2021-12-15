@@ -29,20 +29,20 @@ function AddCinza (event) {
 listaDeTarefas.addEventListener('click', AddCinza);
 
 
-function doubleClick () {
+function doubleClick (event) {
     for(index = 0; index < ElementoDaLista.length; index += 1){
         if(ElementoDaLista[index].style.backgroundColor === 'rgb(128, 128, 128)' && ElementoDaLista[index].classList.value === 'ElementoDaLista'){
             ElementoDaLista[index].classList.add('completed');
         }
-        else if(ElementoDaLista[index].classList.value === 'ElementoDaLista completed'){
-            ElementoDaLista[index].classList.remove('completed');
-        }
+        else if(event.target === ElementoDaLista[index] && event.target.classList.value === 'ElementoDaLista completed'){
+            event.target.classList.remove('completed');
+         }
     }
 }
 listaDeTarefas.addEventListener('dblclick', doubleClick);
 
 let apagar = document.getElementById('apaga-tudo');
-let itensAll = document.querySelectorAll('ElementoDaLista');
+
 function apagarItem () {
     for(index = 0; index < ElementoDaLista.length; index += 1){
         listaDeTarefas.removeChild(ElementoDaLista[index]);
@@ -61,5 +61,36 @@ function apagarItem () {
     }
 }
 
-apagar.addEventListener('click', apagarItem)
-console.log(itensAll);
+apagar.addEventListener('click', apagarItem);
+
+let removerFinal = document.getElementById('remover-finalizados');
+
+function removerFinalizados () {
+    for(index = 0; index < ElementoDaLista.length; index += 1){
+        if(ElementoDaLista[index].classList.value === 'ElementoDaLista completed'){
+            listaDeTarefas.removeChild(ElementoDaLista[index]);
+        }
+    }
+    for(index = 0; index < ElementoDaLista.length; index += 1){
+        if(ElementoDaLista[index].classList.value === 'ElementoDaLista completed'){
+            listaDeTarefas.removeChild(ElementoDaLista[index]);
+        }
+    }
+    for(index = 0; index < ElementoDaLista.length; index += 1){
+        if(ElementoDaLista[index].classList.value === 'ElementoDaLista completed'){
+            listaDeTarefas.removeChild(ElementoDaLista[index]);
+        }
+    }
+    for(index = 0; index < ElementoDaLista.length; index += 1){
+        if(ElementoDaLista[index].classList.value === 'ElementoDaLista completed'){
+            listaDeTarefas.removeChild(ElementoDaLista[index]);
+        }
+    }
+    for(index = 0; index < ElementoDaLista.length; index += 1){
+        if(ElementoDaLista[index].classList.value === 'ElementoDaLista completed'){
+            listaDeTarefas.removeChild(ElementoDaLista[index]);
+        }
+    }
+}
+removerFinal.addEventListener('click', removerFinalizados);
+console.log(removerFinal);
