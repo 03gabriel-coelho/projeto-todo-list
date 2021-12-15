@@ -16,6 +16,10 @@ botãoDaTarefa.addEventListener('click', addTarefa);
 
 function AddCinza (event) {
     for(index = 0; index < ElementoDaLista.length; index += 1){
+        ElementoDaLista[index].style.backgroundColor = 'white';
+    }
+    
+    for(index = 0; index < ElementoDaLista.length; index += 1){
        if(event.target === ElementoDaLista[index]){
           event.target.style.backgroundColor = 'rgb(128, 128, 128)';
        }
