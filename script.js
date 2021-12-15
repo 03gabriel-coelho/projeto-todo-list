@@ -41,5 +41,25 @@ function doubleClick () {
 }
 listaDeTarefas.addEventListener('dblclick', doubleClick);
 
+let apagar = document.getElementById('apaga-tudo');
+let itensAll = document.querySelectorAll('ElementoDaLista');
+function apagarItem () {
+    for(index = 0; index < ElementoDaLista.length; index += 1){
+        listaDeTarefas.removeChild(ElementoDaLista[index]);
+    }
+    for(index = 0; index < ElementoDaLista.length; index += 1){
+        listaDeTarefas.removeChild(ElementoDaLista[index]);
+    }
+    for(index = 0; index < ElementoDaLista.length; index += 1){
+        listaDeTarefas.removeChild(ElementoDaLista[index]);
+    }
+    for(index = 0; index < ElementoDaLista.length; index += 1){
+        listaDeTarefas.removeChild(ElementoDaLista[index]);
+    }
+    for(index = 0; index < ElementoDaLista.length; index += 1){
+        listaDeTarefas.removeChild(ElementoDaLista[index]);
+    }
+}
 
-console.log(listaDeTarefas.classList);
+apagar.addEventListener('click', apagarItem)
+console.log(itensAll);
