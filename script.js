@@ -93,4 +93,61 @@ function removerFinalizados () {
     }
 }
 removerFinal.addEventListener('click', removerFinalizados);
-console.log(removerFinal);
+
+function salvarTarefas(){
+let listaa = document.querySelectorAll('.ElementoDaLista');
+
+let ex = [];
+
+for(let index = 0; index < listaa.length; index += 1){
+    ex.push(listaa[index].innerHTML);
+}
+console.log(listaa);
+
+localStorage.setItem('list', JSON.stringify(ex));
+
+let back = [];
+
+for(let i = 0; i < listaa.length; i += 1){
+    if(listaa[i].className === 'ElementoDaLista completed'){
+        back.push('1');
+    }
+    else {
+        back.push('0');
+    }
+}
+
+localStorage.setItem('selected', JSON.stringify(back));
+}
+
+let salvar = document.getElementById('salvar-tarefas');
+salvar.addEventListener('click', salvarTarefas);
+
+
+function IniciarTarefas(){
+    if(localStorage.getItem('list') === null){
+        localStorage.setItem('list', JSON.stringify([]));
+    }
+    else {
+        const list = JSON.parse(localStorage.getItem('list'));
+        const selected = JSON.parse(localStorage.getItem('selected'));
+
+        for(let index = 0; index < list.length; index += 1){
+            let criarList = document.createElement('li');
+            criarList.innerHTML = list[index];
+
+            if(selected[index] === '1'){
+                criarList.className = 'ElementoDaLista completed';
+            }
+            else {
+                criarList.className = 'ElementoDaLista';
+            }
+            
+            listaDeTarefas.appendChild(criarList);
+        }
+    }
+}
+window.onload = function() {
+    IniciarTarefas();
+};
+
