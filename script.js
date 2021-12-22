@@ -142,11 +142,34 @@ function IniciarTarefas(){
             else {
                 criarList.className = 'ElementoDaLista';
             }
-            
+
             listaDeTarefas.appendChild(criarList);
         }
     }
 }
+
+function moverCima () {
+   let elements = document.querySelectorAll('.ElementoDaLista');
+   for(let i = 0; i < elements.length; i += 1){
+       if(elements[i].style.backgroundColor === 'rgb(128, 128, 128)' && i !== 0){
+           listaDeTarefas.insertBefore(elements[i], elements[i - 1]);
+       }
+   }
+}
+let buttonCima = document.getElementById('mover-cima');
+buttonCima.addEventListener('click', moverCima);
+
+function moverBaixo () {
+    let elements = document.querySelectorAll('.ElementoDaLista');
+    for(let i = 0; i < elements.length; i += 1){
+        if(elements[i].style.backgroundColor === 'rgb(128, 128, 128)' && i !== (elements.length - 1) ){
+            listaDeTarefas.insertBefore(elements[i + 1], elements[i]);
+        }
+    }
+ }
+ let buttonBaixo = document.getElementById('mover-baixo');
+ buttonBaixo.addEventListener('click', moverBaixo);
+
 window.onload = function() {
     IniciarTarefas();
 };
