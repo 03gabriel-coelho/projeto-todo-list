@@ -170,6 +170,17 @@ function moverBaixo () {
  let buttonBaixo = document.getElementById('mover-baixo');
  buttonBaixo.addEventListener('click', moverBaixo);
 
+ function removerItem () {
+let elements = document.querySelectorAll('.ElementoDaLista');
+for(let i = 0; i < elements.length; i += 1){
+    if(elements[i].style.backgroundColor === 'rgb(128, 128, 128)'){
+        listaDeTarefas.removeChild(elements[i]);
+    }
+}
+ }
+ let buttonRemover = document.getElementById('remover-selecionado');
+ buttonRemover.addEventListener('click', removerItem);
+
 window.onload = function() {
     IniciarTarefas();
 };
