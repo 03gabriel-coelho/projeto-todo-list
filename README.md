@@ -1,7 +1,7 @@
 # Boas vindas ao repositório do projeto Lista de Tarefas!
 
 <p align="center">
-  <img src="example.png" width="350" title="example">
+  <img src="example.png" width="500" title="example">
 </p>
 
 # Habilidades
