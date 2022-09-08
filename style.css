@@ -1,8 +1,29 @@
-#title {
+html {
     text-align: center;
 }
-
+#title {
+    text-align: center;
+    text-decoration: underline;
+}
+body {
+    background-image: url(https://i.pinimg.com/736x/83/7d/54/837d5443ac0f4686757cd0ecccf30947--minimalist-wallpaper-minimalist-design.jpg);
+    font-family: monospace;
+}
 .completed {
     text-decoration: line-through solid rgb(0, 0, 0);
     background-color: rgb(128, 128, 128);
+}
+
+#lista-tarefas {
+    margin-top: 100px;
+}
+
+p {
+    font-size: 20px;
+}
+
+.ElementoDaLista {
+  font-size: 25px;
+  background-color: white;
+  border: black solid 1px;
 }
